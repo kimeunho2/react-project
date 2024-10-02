@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 
+import { useNavigate } from 'react-router-dom';
+
 const Navigation = () => {
   const [isHovered, setIsHovered] = useState(false);
 
+  const navigate = useNavigate();
 
   return (
     <>
@@ -28,7 +31,7 @@ const Navigation = () => {
         </div>
         <div className="auth-buttons">
           <p className="nav-item login">로그인</p>
-          <button className="cta">시작하기</button>
+          <button className="cta" onClick={() => navigate('/dashboard')}>시작하기</button>
         </div>
       </div>
     </>

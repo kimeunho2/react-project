@@ -24,7 +24,7 @@ const GoalPageview = (className) => {
             return
           }
 
-
+          
 
     }
 
