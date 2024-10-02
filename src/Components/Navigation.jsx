@@ -1,19 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 const Navigation = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+
   return (
     <>
-    <div className='nav-bar'>
-    <p>로고</p>
-    <p>서비스 소개</p>
-    <p>가이드</p>
-    <p>요금제</p>
-    <p>도입 지원</p>
-    <p>로그인</p>
-    <p>시작하기</p>
-    </div>
+      <div className="nav-bar">
+        <div className="logo">로고</div>
+        <div className="nav-items">
+          <div className="nav-item"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}>
+            서비스 
+            {
+              isHovered && 
+              (
+                <div className='dropdown-menu'>
+                  <div className="dropdown-item">A/B 테스트</div>
+                </div>
+              )
+            }
+          </div>
+          <div className="nav-item">가이드</div>
+          <div className="nav-item">요금제</div>
+          <div className="nav-item">도입 지원</div>
+        </div>
+        <div className="auth-buttons">
+          <p className="nav-item login">로그인</p>
+          <button className="cta">시작하기</button>
+        </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Navigation
+export default Navigation;
