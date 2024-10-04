@@ -38,15 +38,6 @@ const ABTestUrlSetup = ({ testname, testurl }) => {
 
   };
   
-  const handleNameChange = (e) => {
-    const {value} = e.target;
-      setTempName(value);
-  };
-
-  const handleUrlChange = (e) => {
-    const {value} = e.target;
-      setTempUrl(value);
-  };
   
   // 다음 버튼 클릭시 작동
   const next = () => {
@@ -71,9 +62,9 @@ const ABTestUrlSetup = ({ testname, testurl }) => {
         <h3>비교 페이지 추가</h3>
         <div>
           <p>이름</p>
-          <Input type={"text"} placeholder={"이름을 입력하세요"} required={true} maxLength={100} onChange={handleNameChange}/>
+          <Input type={"text"} placeholder={"이름을 입력하세요"} required={true} maxLength={100} onChange={(e) => setTempName(e.target.value)}/>
           <p>URL</p>
-          <Input type={"text"} placeholder={"https://www.example.com"} required={true} maxLength={100} onChange={handleUrlChange} />
+          <Input type={"text"} placeholder={"https://www.example.com"} required={true} maxLength={100} onChange={(e) => setTempUrl(e.target.value)}/>
           <DashboardButton text={"추가"} onClick={handleAdd} />
           {error && <p style={{ color: 'red' }}>{error}</p>}
         </div>

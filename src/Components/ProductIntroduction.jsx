@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ProductIntroduction = () => {
+const ProductIntroduction = ({text}) => {
   return (
    <>
-    <h5>텍스트</h5>
+    <h5>{text}</h5>
     <h3>텍스트</h3>
     <p>텍스트</p>
     </>
